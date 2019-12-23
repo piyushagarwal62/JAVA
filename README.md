@@ -1,2 +1,2 @@
-# JavaBasics
+# JAVA
 Java Code for practise
