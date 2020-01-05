@@ -11,6 +11,7 @@ public class Product {
 	static int totalBill;
 	static int noOfProducts;
 	
+	
 	public Product() {
 		prodNo = 0;
 		prodName = null;
@@ -36,6 +37,7 @@ public class Product {
 		prodPrice = sc.nextInt();
 		System.out.println("Enter Quantity: ");
 		qty = sc.nextInt();
+		
 //		sc.close();
 	}
 	
