@@ -14,12 +14,12 @@ public class HotelBilling {
 		System.out.println("Enter number of rooms");
 		int rooms = sc.nextInt();
 		arr = new Guest[floors][rooms];
-		System.out.println("Enter each guest information");
+		System.out.println("Enter each guest information:");
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
-				System.out.println("Enter name : ");
+				System.out.println("Enter name: ");
 				String name = sc.nextLine();
-				System.out.println("Enter its bill");
+				System.out.println("Enter its total bill:");
 				int bill = sc.nextInt();
 				arr[i][j] = new Guest(name, bill);
 			}
