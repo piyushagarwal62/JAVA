@@ -14,14 +14,12 @@ public class Metro {
 			System.out.println(obj);
 		}
 	}
-
 }
 
 class Employees{
 	int salary;
 	int empId;
 	int hike;
-	
 	
 	public Employees(int salary, int empId, int hike) {
 		super();
@@ -36,6 +34,7 @@ class Employees{
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
+	
 	public int getEmpId() {
 		return empId;
 	}
@@ -53,6 +52,7 @@ class Employees{
 		float amt = (float)(salary *(((float)(hike)/100)));
 		salary += amt;
 	}
+	
 	@Override
 	public String toString() {
 		return "EmpId: " + empId + " Salary: " + salary + " Hike: " + hike;

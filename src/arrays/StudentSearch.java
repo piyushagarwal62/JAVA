@@ -6,7 +6,7 @@ public class StudentSearch {
 
 	int rollno[];
 	String[] name;
-	char[] std;
+	char []std;
 	
 	public void acceptDetails()
 	{	

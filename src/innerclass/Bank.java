@@ -4,7 +4,7 @@ public class Bank {
 
 	int ifsccode;
 	int customers;
-	
+	String name;
 	
 	public void loanFacility(){
 		int number = 122;
@@ -38,14 +38,19 @@ public class Bank {
 	}
 	
 	final class CurrentAccount extends Account{
+		String name;
 		@Override
-		void typeOfAccount() {
+		public void typeOfAccount() {
 			System.out.println("it is current account type");
+			this.name = "Piyush";
+			Bank.this.name = "Rahul";
+
 		}
 	}
 	
 	public int getNumberOfCustomers(){
 //		System.out.println(number); //Illegal
+		this.ifsccode = 123;
 		return customers;
 	}
 	
@@ -59,6 +64,7 @@ public class Bank {
 		Bank.Account acc1 = new Bank().new CurrentAccount();
 		acc1.printIFSCCode();
 		acc1.deposit(2000);
+		
 	}
 
 }

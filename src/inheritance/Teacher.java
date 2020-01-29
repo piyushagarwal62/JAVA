@@ -19,7 +19,7 @@ public class Teacher{
 	public static void main(String[] args) throws Exception{
 		STeacher obj = new STeacher(12, "Piyush", "Senior Teacher");
 		obj.getDesignation();
-		obj.attendence();
+		obj.attendance();
 		Teacher obj1 = new STeacher();// Upcasting
 		((STeacher)obj1).getName();
 		
@@ -46,8 +46,8 @@ public class Teacher{
 		}
 	}
 	
-	public void attendence(){
-		
+	public void attendance(){
+		System.out.println("Role of taking attendance");
 	}
 	
 	public String getDesignation() throws Exception{
@@ -58,14 +58,17 @@ public class Teacher{
 }
 
 class STeacher extends Teacher{
-	
+
+	String name;
+	String topic;
+
 	public STeacher(){
 		System.out.println("Inside STeacher");
 	}
 	
 	public STeacher(int empId, String name, String desig){
 		this();
-//		super(empId, desig);
+//		super(empId, desig); // Cannot have super and this on first line
 		this.name = name;
 	}
 	
@@ -78,12 +81,13 @@ class STeacher extends Teacher{
 		System.out.println("Inside STeacher getName");
 		return name;
 	}
-	String name;
-	String topic;
 }
 
 class HTeacher extends Teacher{
 	
+	String name;
+	String topic;
+
 	public HTeacher(){
 		super();
 		System.out.println("Inside STeacher");
@@ -103,6 +107,4 @@ class HTeacher extends Teacher{
 		System.out.println("Inside STeacher getName");
 		return name;
 	}
-	String name;
-	String topic;
 }
