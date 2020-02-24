@@ -40,5 +40,8 @@ public class Innova extends Car{
 		obj.getNumberOfDoors();
 		obj.runOnFuel();
 		obj.runOnFourWheel(); 
+		
+		Car obj1 = new Innova();
+		obj1.getNumberOfDoors();
 	}
 }
