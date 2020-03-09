@@ -1,4 +1,4 @@
-package thread_implementation.extend.thread;
+package thread_implementation.extend;
 
 class ExtendThreadDemo {
 	public static void main(String args[]) {

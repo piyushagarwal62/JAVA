@@ -1,8 +1,12 @@
-package thread_implementation.synchronize;
+package thread_implementation.wait_notify;
 
+/**
+ * @author piyush.agarwal
+ *
+ */
 public class MyThread implements Runnable {
 
-	String name; 
+	String name;
 	Thread t;
 	boolean suspendFlag;
 
@@ -20,13 +24,10 @@ public class MyThread implements Runnable {
 			for (int i = 15; i > 0; i--) {
 				System.out.println(name + ": " + i);
 				Thread.sleep(200);
-				 
+
 				synchronized (this) {
 					while (suspendFlag) {
 						wait();
-					}
-					{
-						
 					}
 				}
 			}

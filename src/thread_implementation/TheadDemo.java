@@ -1,5 +1,11 @@
-package thread_implementation.extend;
+package thread_implementation;
 
+/**
+ * @author piyush
+ * 
+ *         Showcase of main thread which runs by default for all the Java
+ *         programs
+ */
 public class TheadDemo {
 
 	public static void main(String args[]) {
@@ -18,4 +24,3 @@ public class TheadDemo {
 		}
 	}
 }
-

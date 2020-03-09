@@ -1,4 +1,4 @@
-package thread_implementation.extend.thread;
+package thread_implementation.extend;
 
 public class MyThread extends Thread {
 	MyThread(String name) {
@@ -8,10 +8,11 @@ public class MyThread extends Thread {
 		start(); // Start the thread
 	}
 
-	public void start1(){
+	public void start1() {
 		System.out.println("Inside Start method");
-		
+
 	}
+
 	// This is the entry point for the second thread.
 	public void run() {
 		try {

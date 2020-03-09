@@ -1,6 +1,6 @@
 package collections;
 
-public class Student {
+public class Student implements Comparable<Object>{
 	
 	int id;
 	String name;
@@ -33,5 +33,10 @@ public class Student {
 	@Override
 	public String toString() {
 		return id + " " + name + " " + location;
+	}
+	@Override
+	public int compareTo(Object stud1) {
+		Student stud = (Student)stud1;
+		return this.id - stud.id;
 	}
 }

@@ -29,6 +29,8 @@ public class SetImplementation {
 		System.out.println("In ascending order: " + arrayList);
 		Collections.sort(arrayList, Collections.reverseOrder());
 		System.out.println("In descending order: " + arrayList);
+		
+		//Using Comparator of type Integer
 		Collections.sort(arrayList, new CompareInt());
 		System.out.println("Using Comparator:" + arrayList);
 
@@ -38,16 +40,19 @@ public class SetImplementation {
 			Integer integer = iterator.next();
 			System.out.println(integer);
 		}
+		//Using forEach method as lambda expression
 		set.forEach(n -> {
 			System.out.println(n);
 		});
 	}
 
 	public static void main(String[] args) {
-		// implementHashSet();
-		// implementTreeSet();
-		// implementLinkedHashSet();
+		implementStringComparator();
+		implementHashSet();
+		implementTreeSet();
+		implementLinkedHashSet();
 		usingStudentObject();
+		implementObjectComparator();
 
 	}
 
@@ -113,7 +118,7 @@ public class SetImplementation {
 			}
 		}
 		System.out.println();
-		//Using foreach
+		//Using forEach
 		arrList.forEach(arr -> {
 			System.out.println("Information of class : ");
 			Iterator<Student> iterator = arr.iterator();
@@ -122,6 +127,31 @@ public class SetImplementation {
 				System.out.println(next);
 			}
 		});
+		
+	}
+	
+	public static void implementObjectComparator(){
+		Student student = new Student(3, "Daniel", "Pune");
+		HashSet<Student> studList1 = new HashSet<>();
+		studList1.add(student);
+		studList1.add(new Student(4, "Zen", "Colombo"));
+		studList1.add(new Student(5, "Bindu", "Mumbai"));
+		studList1.add(new Student(6, "Xomb", "Peru"));
+		studList1.add(new Student(7, "Ranveer", "Delhi"));
+
+		ArrayList<Student> newStud = new ArrayList<>(studList1);
+		Collections.sort(newStud, new CompareObject());
+		System.out.println(newStud);
+		
+	}
+	
+	public static void implementStringComparator(){
+		TreeSet<String> names = new TreeSet<>(new CompareString());
+		names.add("Virat Kohli");
+		names.add("Rohit Sharma");
+		names.add("Ravindra Jadeja");
+		names.add("Zen Trivia");
+		System.out.println(names);
 	}
 
 	static class CompareInt implements Comparator<Integer> {
@@ -131,5 +161,25 @@ public class SetImplementation {
 			return i2 - i1;
 		}
 
+	}
+	
+	static class CompareString implements Comparator<String>{
+		
+		@Override
+		public int compare(String str1, String str2) {
+			int index1 = str1.indexOf(" ");
+			int index2 = str2.indexOf(" ");
+			
+			return str1.substring(index1+1).compareTo(str2.substring(index2+1));
+		}
+	}
+	
+	static class CompareObject implements Comparator<Student>{
+
+		@Override
+		public int compare(Student arg0, Student arg1) {
+			return arg1.name.compareTo(arg0.name);
+		}
+		
 	}
 }

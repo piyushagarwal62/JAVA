@@ -1,5 +1,9 @@
-package thread_implementation.synchronize;
+package thread_implementation.wait_notify;
 
+/**
+ * @author piyush.agarwal
+ *
+ */
 public class CustomeEvents {
 
 	public static void main(String args[]) {
@@ -20,7 +24,7 @@ public class CustomeEvents {
 		} catch (InterruptedException e) {
 			System.out.println("Main thread Interrupted");
 		}
-		
+
 		// wait for threads to finish
 		try {
 			System.out.println("Waiting for threads to finish.");

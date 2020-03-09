@@ -1,17 +1,17 @@
-package thread_implementation.extend;
+package thread_implementation.implement;
 
 public class ThreadDemoByRunnable1 {
 
 	public static void main(String[] args) {
 		runFromRunnableThread();
 	}
-	
-	public static void runFromRunnableThread(){
+
+	public static void runFromRunnableThread() {
 		MyThread1 obj = new MyThread1(); // create a new thread
 		Thread thread = new Thread(obj, "ChildThread");
 		thread.setPriority(10);
 		thread.start();
-		
+
 		try {
 			for (int i = 5; i > 0; i--) {
 				System.out.println("Main Thread: " + i);
@@ -22,27 +22,23 @@ public class ThreadDemoByRunnable1 {
 		} catch (InterruptedException e) {
 			System.out.println("Main thread interrupted.");
 		}
-		/*try {
-			thread.join();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-		System.out.println("Main thread exiting.");		
+		/*
+		 * try { thread.join(); } catch (InterruptedException e) {
+		 * e.printStackTrace(); }
+		 */
+		System.out.println("Main thread exiting.");
 	}
 
 }
-
-
 
 class MyThread1 implements Runnable {
 
 	MyThread1() {
 		super();
-		// Create a new, second thread
+		// Create a new thread
 	}
 
-	// This is the entry point for the second thread.
+	// This is the entry point for the thread.
 	public void run() {
 		try {
 			for (int i = 5; i > 0; i--) {
