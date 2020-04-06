@@ -1,0 +1,2 @@
+Hello $world this is java class, bye! this is how I deal with the people. 
+So home quarantine means nothing. it is just to do timepass.
