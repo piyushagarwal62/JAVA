@@ -2,6 +2,10 @@ package exception_handling;
 
 import java.util.Scanner;
 
+/**
+ * @author piyush.agarwal
+ *
+ */
 public class MyFirstException {
 	
 	public static void main(String[] args) {

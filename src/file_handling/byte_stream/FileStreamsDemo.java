@@ -1,4 +1,4 @@
-package file_handling;
+package file_handling.byte_stream;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -19,9 +19,8 @@ public class FileStreamsDemo {
 		BufferedInputStream bis = null;
 		try (FileInputStream fis = new FileInputStream("resource/temp.txt");
 				FileOutputStream fos = new FileOutputStream("resource/temp1.txt");
-				FileOutputStream fos2 = new FileOutputStream("resource/temp2.txt")) {
+				FileOutputStream fos2 = new FileOutputStream("resource/temp2.txt", true)) {
 			bis = new BufferedInputStream(fis);
-			System.out.println(bis.available());
 			byte b[] = new byte[10];
 			int count = 0;
 			while ((size = bis.read(b, 0, b.length / 2)) != -1) {
@@ -36,7 +35,6 @@ public class FileStreamsDemo {
 			while ((size = bis.read(b)) != -1) {
 				fos2.write(b);
 			}
-			System.out.println(bis.available());
 		} catch (IOException io) {
 			System.out.println("Exception caught:" + io);
 		} finally {

@@ -49,6 +49,7 @@ public class ConversionMenu {
 			choice = sc.next().charAt(0);
 			
 		}while(choice == 'y');
+		sc.close();
 
 	}
 

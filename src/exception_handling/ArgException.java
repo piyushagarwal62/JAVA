@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * @author piyush.agarwal
+ *
+ */
 public class ArgException {
 
 	public static void main(String[] args) throws Exception {
@@ -66,13 +70,5 @@ class TFoundException extends Exception{
 	@Override
 	public String toString() {
 		return message;
-	}
-}
-
-class StringNullPointerException extends Exception{
-String message;
-	
-	public StringNullPointerException() {
-		message = "String cannot be null";
 	}
 }

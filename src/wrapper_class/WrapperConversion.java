@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class WrapperConversion {
 
-	public static void performIntegerOperation(int i){
+	private static void performIntegerOperation(int i){
 		Integer ii = new Integer(i);
 		System.out.println("Byte Values : "+ ii.byteValue());
 		String str = Integer.toString(i);
@@ -19,14 +19,27 @@ public class WrapperConversion {
 		if(sc.hasNextInt()){
 			System.out.println("It is an integer value");
 			performIntegerOperation(sc.nextInt());
-			
-		}else if(sc.hasNextDouble()){
+		}/*else if(sc.hasNextDouble()){
 			System.out.println("It is an double value");
-		}else if(sc.hasNextBoolean()){
-			
-		}else if(sc.hasNext()){
-			
+		}*/else if(sc.hasNextLong()){
+			method1(sc.nextLong());
+		}else if(sc.hasNextBigDecimal()){
+			method1(sc.nextBigDecimal());
 		}
+		sc.close();
 	}
+	
+	private static void method1(Long... i){
+		System.out.println("In Long" + i[0] );
+	}
+
+	private static void method1(Long i){
+		System.out.println("In Longi" + i );
+	}
+
+	public static void method1(Number... i){
+		System.out.println("In Number");	
+	}
+
 
 }
