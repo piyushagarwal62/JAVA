@@ -17,7 +17,7 @@ interface Bouncable {
 }
 
 interface BallBouncable extends Bouncable{
-	void bounce(int height);
+	void bounce(int height);	
 }
 
 class LeatherProperty{
